@@ -22,6 +22,7 @@ $email = $_POST["email"];
 $sql = "INSERT INTO users (first_name, last_name, email, login_name, password) VALUES(?, ?, ?, ?, ?)";
 $stmt = $connection->prepare($sql);
 $stmt->bind_param("sssss", $first_name, $last_name, $email, $login_name, $password);
+
 $stmt->execute();
 
 echo "Registration successfull";

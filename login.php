@@ -41,6 +41,7 @@ if (isset($_POST['loginName']) and isset($_POST['password'])) {
         //successfully validated
         echo "<br>You are authenticated";
         $_SESSION["login_authenticated"] = true;
+        $_SESSION["login_name"] = $user["login_name"];
         $_SESSION["login_full_name"] = $user["first_name"] . " " . $user["last_name"];
     } else {
         echo "<br>You are not authenticated";
@@ -88,7 +89,7 @@ if (isset($_POST['loginName']) and isset($_POST['password'])) {
                         </div>
                         <hr />
                         <button type="submit" class="btn btn-primary">Login</button>
-                        <a href="sign_up.php">Sign Up</a>
+                        <a href="sign_up.php" class="btn btn-primary">Sign Up</a>
                     </form>
                 </div>
             </div>
