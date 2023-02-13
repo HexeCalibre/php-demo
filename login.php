@@ -1,12 +1,6 @@
 <?php
 session_start();
 
-$db_server_name = "localhost";
-$db_name = "user_management2";
-$db_user_name = "root";
-$db_user_password = "password123";
-
-
 function redirect($url)
 {
     header('Location: ' . $url);
@@ -15,7 +9,7 @@ function redirect($url)
 
 
 if (isset($_POST['loginName']) and isset($_POST['password'])) {
-    $connection = mysqli_connect($db_server_name, $db_user_name, $db_user_password, $db_name);
+    require_once("includes/db.inc.php");
 
     if ($connection->connect_error) {
         die("Connection failed " . $connection->connect_error);
@@ -31,11 +25,6 @@ if (isset($_POST['loginName']) and isset($_POST['password'])) {
     $stmt->execute();
     $result = $stmt->get_result();
     $user = $result->fetch_assoc();
-
-    // $results = $stmt->get_result();
-    // while ($row = $results->fetch_assoc()) {
-    //     echo $row['login_name'];
-    // }
 
     if ($password == $user["password"]) {
         //successfully validated
