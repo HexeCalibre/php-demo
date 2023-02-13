@@ -11,11 +11,6 @@ function redirect($url)
 if (isset($_POST['loginName']) and isset($_POST['password'])) {
     require_once("includes/db.inc.php");
 
-    if ($connection->connect_error) {
-        die("Connection failed " . $connection->connect_error);
-    }
-
-
     $login_name = $_POST['loginName'];
     $password = $_POST['password'];
 

@@ -1,10 +1,6 @@
 <?php
 require_once("includes/db.inc.php");
 
-if ($connection->connect_error) {
-    die("Connection failed " . $connection->connect_error);
-}
-
 $first_name = $_POST["firstName"];
 $last_name = $_POST["lastName"];
 $password = $_POST["password"];
