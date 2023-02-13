@@ -3,7 +3,7 @@ session_start();
 
 require_once("includes/db.inc.php");
 
-$login_name = $_SESSION["login_name"];
+$login_name = $_POST["login_name"];
 
 $sql = "DELETE FROM users WHERE login_name = ?";
 $stmt = $connection->prepare($sql);
