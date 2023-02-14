@@ -22,7 +22,8 @@ if ($_SESSION["login_authenticated"]) {
 <body>
 
     <a href="change_password.php">Change Password</a>
-    <button onClick="deactivate('<?php echo $_SESSION["login_name"] ?>')">Deactivate</button>
+    <a href="change_password.php" onClick="deactivate('<?php echo $_SESSION["login_name"] ?>')">Deactivate</a>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="js/welcome.js"></script>
