@@ -355,7 +355,7 @@ $person_obj = (object)[
   "first_name" => "Juan",
   "last_name" => "Dela Cruz",
   "age" => 20,
-  "hobbies" => (object) ["eating", "sleeping", "playing"]
+  "hobbies" => array("eating", "sleeping", "playing")
 ];
 
 print_r($person_obj);
@@ -363,6 +363,10 @@ echo "<br>";
 var_dump($person_obj);
 echo "<br>";
 echo $person_obj->first_name;
+echo "<br>";
+print_r($person_obj->hobbies);
+echo "<br>";
+echo $person_obj->hobbies[0];
 
 
 echo nl2br("\n\n------------Date -----------\n");
