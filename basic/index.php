@@ -361,3 +361,44 @@ $person_obj = (object)[
 print_r($person_obj);
 echo "<br>";
 var_dump($person_obj);
+echo "<br>";
+echo $person_obj->first_name;
+
+
+echo nl2br("\n\n------------Date -----------\n");
+
+echo date_default_timezone_get();
+echo "<br>";
+echo date("Y-m-d h:i:s a");
+
+date_default_timezone_set("Asia/Manila");
+echo "<br>";
+echo date("Y-m-d h:i:s a");
+echo "<br>";
+
+$date = date_create("2023-07-31 11:36:53 am");
+echo gettype($date);
+echo "<br>";
+echo date_format($date, 'Y-m-d');
+
+echo "<br>";
+date_add($date, date_interval_create_from_date_string("40 days"));
+echo date_format($date, 'Y-m-d');
+
+echo nl2br("\n\n------------Function -----------\n");
+
+function add_number($a, $b)
+{
+  return $a + $b;
+}
+
+
+echo add_number(10, 11);
+
+$x = 10;
+function change_number($a)
+{
+  $a = 11;
+}
+echo "<br>";
+echo $x;
