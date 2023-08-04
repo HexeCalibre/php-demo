@@ -2,6 +2,8 @@
 // echo "Get from Home <br>";
 // echo $_GET['first_name'];
 
+echo $_POST['first_name'];
+
 ?>
 
 <!DOCTYPE html>
