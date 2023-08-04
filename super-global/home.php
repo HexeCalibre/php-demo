@@ -4,9 +4,16 @@
 
 // echo $_POST['first_name'];
 
-session_start();
+// session_start();
 
-echo $_SESSION['user_name'];
+// echo $_SESSION['user_name'];
+
+
+if (isset($_REQUEST['submit'])) {
+    echo "First Name " . $_REQUEST['first_name'];
+    echo "<br>";
+    echo "ID " . $_REQUEST['id'];
+}
 
 ?>
 
