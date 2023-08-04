@@ -2,7 +2,11 @@
 // echo "Get from Home <br>";
 // echo $_GET['first_name'];
 
-echo $_POST['first_name'];
+// echo $_POST['first_name'];
+
+session_start();
+
+echo $_SESSION['user_name'];
 
 ?>
 
