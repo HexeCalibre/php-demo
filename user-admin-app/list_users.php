@@ -1,7 +1,7 @@
 <?php
 require_once "database/db.include.php";
 
-$sql = "SELECT *,  CASE WHEN active THEN 'true' ELSE 'false' END as status FROM user";
+$sql = "SELECT *,  CASE WHEN active THEN 'true' ELSE 'false' END as status FROM user ORDER BY id DESC";
 $users = $con->query($sql);
 ?>
 
