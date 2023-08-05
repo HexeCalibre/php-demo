@@ -3,12 +3,6 @@ require_once "database/db.include.php";
 require_once "includes/util.php";
 
 $user_id = $_GET['user_id'];
-$sql = "SELECT * FROM user WHERE id = ?";
-$stmt = $con->prepare($sql);
-$stmt->bind_param("i", $user_id);
-$stmt->execute();
-$result = $stmt->get_result();
-$user = $result->fetch_assoc();
 
 if (isset($_POST['update'])) {
     $first_name = $_POST['first_name'];
@@ -27,7 +21,15 @@ if (isset($_POST['update'])) {
     }
 } else if (isset($_POST['cancel'])) {
     redirect("view_user.php?user_id=$user_id");
+} else {
+    $sql = "SELECT * FROM user WHERE id = ?";
+    $stmt = $con->prepare($sql);
+    $stmt->bind_param("i", $user_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $user = $result->fetch_assoc();
 }
+
 
 ?>
 
