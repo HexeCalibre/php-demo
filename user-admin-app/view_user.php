@@ -44,6 +44,7 @@ $user = $result->fetch_assoc();
     </p>
 
     <p><a href="edit_user.php?user_id=<?php echo $user['id'] ?>">Edit User</a></p>
+    <p><a href="delete_user.php?user_id=<?php echo $user['id'] ?>">Delete User</a></p>
     <p><a href="list_users.php">Go back to List</a></p>
 
 
