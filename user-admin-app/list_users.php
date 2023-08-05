@@ -31,7 +31,7 @@ $users = $con->query($sql);
                 <td><?php echo $rows['last_name'] ?></td>
                 <td><?php echo $rows['user_name'] ?></td>
                 <td><?php echo $rows['status'] ?></td>
-                <td>View</td>
+                <td><a href="view_user.php?user_id=<?php echo $rows['id'] ?>">View</a></td>
             </tr>
         <?php } ?>
     </table>
