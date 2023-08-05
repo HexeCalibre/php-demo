@@ -42,7 +42,9 @@ $user = $result->fetch_assoc();
         <label>Active</label>
         <input type="checkbox" disabled <?php echo $user['active'] == 1 ? 'checked' : '' ?>>
     </p>
-    <a href="edit_user.php?user_id=<?php echo $user['id'] ?>">Edit User</a>
+
+    <p><a href="edit_user.php?user_id=<?php echo $user['id'] ?>">Edit User</a></p>
+    <p><a href="list_users.php">Go back to List</a></p>
 
 
 </body>

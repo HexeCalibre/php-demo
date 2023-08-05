@@ -54,7 +54,7 @@ if (isset($_POST['update'])) {
         </p>
         <p>
             <label>Email</label>
-            <input type="text" name="email" value="<?php echo $user['email'] ?>">
+            <input type="email" name="email" value="<?php echo $user['email'] ?>">
         </p>
         <p>
             <label>User Name</label>

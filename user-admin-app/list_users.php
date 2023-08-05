@@ -17,6 +17,8 @@ $users = $con->query($sql);
 
 <body>
     <h1>User Management System</h1>
+
+    <p><a href="create_user.php">Create New User</a></p>
     <table>
         <tr>
             <th>First Name</th>
