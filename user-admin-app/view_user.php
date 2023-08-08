@@ -1,4 +1,9 @@
 <?php
+require_once "includes/util.inc.php";
+session_start();
+validate_login();
+
+
 require_once "database/db.include.php";
 $user_id = $_GET['user_id'];
 

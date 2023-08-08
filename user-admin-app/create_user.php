@@ -1,9 +1,12 @@
 <?php
+require_once "includes/util.inc.php";
+session_start();
+validate_login();
+
 
 if (isset($_POST['create'])) {
 
     require_once "database/db.include.php";
-    require_once "includes/util.php";
 
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
@@ -20,10 +23,7 @@ if (isset($_POST['create'])) {
 
         redirect("view_user.php?user_id=$user_id");
     }
-} else if (isset($_POST['cancel'])) {
-    redirect("list_users.php");
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -61,8 +61,10 @@ if (isset($_POST['create'])) {
         </p>
 
         <button type="submit" name="create">Create</button>
-        <button type="submit" name="cancel">Cancel</button>
     </form>
+    <a href="list_users.php">
+        <button>Cancel</button>
+    </a>
 
 </body>
 

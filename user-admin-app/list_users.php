@@ -1,6 +1,10 @@
 <?php
-require_once "database/db.include.php";
+require_once "includes/util.inc.php";
+session_start();
+validate_login();
 
+
+require_once "database/db.include.php";
 $sql = "SELECT *,  CASE WHEN active THEN 'true' ELSE 'false' END as status FROM user ORDER BY id DESC";
 $users = $con->query($sql);
 ?>
@@ -13,12 +17,17 @@ $users = $con->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User List</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <h1>User Management System</h1>
 
-    <p><a href="create_user.php">Create New User</a></p>
+    <p>
+        <span><a href="create_user.php">Create New User</a></span>
+        <span class="align-right"><a href="logout.php">Log out</a></span>
+    </p>
+
     <table>
         <tr>
             <th>First Name</th>
